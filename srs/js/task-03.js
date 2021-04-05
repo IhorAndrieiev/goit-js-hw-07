@@ -47,21 +47,33 @@ console.log(imagesRef);
 //   imageEl.alt = image.alt;
 //   imageEl.width = 640;
 //   return imageEl;
-// })
-const imagesEl = [];
-images.forEach(image => {
-  const liImgRef = document.createElement('li');
-   
-  const ImgRef = document.createElement('img');
-  ImgRef.src = image.url;
-  ImgRef.alt = image.alt;
-  ImgRef.width = 640;
+// })    
+const imagesEl = images.map(image => {
+   const liImgRef = document.createElement('li');
+               liImgRef.classList.add('images__item');
+         const ImgRef = document.createElement('img');
+               ImgRef.src = image.url;
+               ImgRef.alt = image.alt;
+               ImgRef.width = 640;
   liImgRef.appendChild(ImgRef);
-
-  imagesEl.push(liImgRef);
+  
   return liImgRef;
-});
-console.log(imagesEl);
+ } );
+// const imagesEl = [];
+// images.forEach(image => {
+//   const liImgRef = document.createElement('li');
+//         liImgRef.classList.add('images__item');
+//   const ImgRef = document.createElement('img');
+//   ImgRef.src = image.url;
+//   ImgRef.alt = image.alt;
+
+//   ImgRef.width = 640;
+//   liImgRef.appendChild(ImgRef);
+
+//   imagesEl.push(liImgRef);
+//   return liImgRef;
+// });
+// console.log(imagesEl);
   
 imagesRef.append(...imagesEl)
 //   liImgRef.src = el.url;

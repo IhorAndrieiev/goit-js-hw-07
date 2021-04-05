@@ -39,16 +39,21 @@ console.log(ingredientsRef);
 // console.log(ingredientsEl);
 // ingredientsRef.appendChild(ingredientsEl);
 
-const ingredientsEl = [];
-ingredients.forEach(el => {
-  
-  const liTitleRef = document.createElement('li');
-        liTitleRef.classList.add('ingredients__item');
-        liTitleRef.textContent = el;
-  ingredientsEl.push(liTitleRef);
-  
+const ingredientsEl = ingredients.map(ingredient => {
+const liTitleRef = document.createElement('li');
+  liTitleRef.classList.add('ingredients__item');
+  liTitleRef.textContent = ingredient;
   return liTitleRef;
-
 });
-console.log(ingredientsEl);
+// ingredients.forEach(el => {
+  
+//   const liTitleRef = document.createElement('li');
+//         liTitleRef.classList.add('ingredients__item');
+//         liTitleRef.textContent = el;
+//   ingredientsEl.push(liTitleRef);
+  
+//   return liTitleRef;
+
+// });
+//console.log(ingredientsEl);
 ingredientsRef.append(...ingredientsEl);
