@@ -113,3 +113,10 @@ navAllLiItemsRef.forEach(el => {
     console.log(`Категория: ${title}, Количество элементов: ${count}`)
 })
 
+console.log('ВАРИАНТ 6 РЕШЕНИЯ');
+const totalCategories = document.querySelectorAll('.item');
+console.log('В списке', totalCategories.length, 'категории');
+const categoriesArray = [...totalCategories].map(catigories =>
+    `Категория: ${catigories.firstElementChild.textContent} 
+    Количество элементов: ${catigories.lastElementChild.children.length}`).join('\n')
+console.log(categoriesArray);
