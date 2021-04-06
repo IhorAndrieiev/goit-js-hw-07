@@ -48,17 +48,33 @@ console.log(imagesRef);
 //   imageEl.width = 640;
 //   return imageEl;
 // })    
-const imagesEl = images.map(image => {
-   const liImgRef = document.createElement('li');
-               liImgRef.classList.add('images__item');
-         const ImgRef = document.createElement('img');
-               ImgRef.src = image.url;
-               ImgRef.alt = image.alt;
-               ImgRef.width = 640;
-  liImgRef.appendChild(ImgRef);
+// const imagesEl = images.map(image => {
+//    const liImgRef = document.createElement('li');
+//                liImgRef.classList.add('images__item');
+//          const ImgRef = document.createElement('img');
+//                ImgRef.src = image.url;
+//                ImgRef.alt = image.alt;
+//                ImgRef.width = 640;
+//   liImgRef.appendChild(ImgRef);
   
-  return liImgRef;
- } );
+//   return liImgRef;
+// }); 
+ 
+const makeImages = (newImages) => {
+  return newImages.map(image => {
+    const liImgRef = document.createElement('li');
+    liImgRef.classList.add('images__item');
+    const ImgRef = document.createElement('img');
+    ImgRef.src = image.url;
+    ImgRef.alt = image.alt;
+    ImgRef.width = 640;
+    liImgRef.appendChild(ImgRef);
+  
+    return liImgRef;
+  });
+};
+
+const imagesEl = makeImages(images);
 // const imagesEl = [];
 // images.forEach(image => {
 //   const liImgRef = document.createElement('li');
@@ -75,7 +91,7 @@ const imagesEl = images.map(image => {
 // });
 // console.log(imagesEl);
   
-imagesRef.append(...imagesEl)
+imagesRef.append(...imagesEl);
 //   liImgRef.src = el.url;
 //   liImgRef.alt = el.alt;
 //   liImgRef.width = 640;

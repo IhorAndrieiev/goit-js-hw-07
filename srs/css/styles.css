@@ -1,4 +1,10 @@
+#gallery {
+  display: flex;
+}
+
 .images__item {
-    display: block;
-    margin: 10px;
+  display: inline-flexbox;
+  margin: auto;
+  width: 640px;
+  padding: 20px;
 }
