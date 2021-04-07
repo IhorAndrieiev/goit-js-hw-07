@@ -18,6 +18,26 @@ const images = [
 
 const imagesRef = document.querySelector('ul#gallery');
 console.log(imagesRef);
+
+ 
+const makeImages = (newImages) => {
+  return newImages.map(image => {
+    const liImgRef = document.createElement('li');
+    liImgRef.classList.add('images__item');
+    const ImgRef = document.createElement('img');
+    ImgRef.src = image.url;
+    ImgRef.alt = image.alt;
+    ImgRef.width = 640;
+    liImgRef.appendChild(ImgRef);
+  
+    return liImgRef;
+  });
+};
+
+const imagesEl = makeImages(images);
+
+imagesRef.append(...imagesEl);
+
 // imagesRef.srs = 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
 // imagesRef.alt = 'White and Black Long Fur Cat';
 
@@ -59,22 +79,7 @@ console.log(imagesRef);
   
 //   return liImgRef;
 // }); 
- 
-const makeImages = (newImages) => {
-  return newImages.map(image => {
-    const liImgRef = document.createElement('li');
-    liImgRef.classList.add('images__item');
-    const ImgRef = document.createElement('img');
-    ImgRef.src = image.url;
-    ImgRef.alt = image.alt;
-    ImgRef.width = 640;
-    liImgRef.appendChild(ImgRef);
-  
-    return liImgRef;
-  });
-};
 
-const imagesEl = makeImages(images);
 // const imagesEl = [];
 // images.forEach(image => {
 //   const liImgRef = document.createElement('li');
@@ -90,8 +95,6 @@ const imagesEl = makeImages(images);
 //   return liImgRef;
 // });
 // console.log(imagesEl);
-  
-imagesRef.append(...imagesEl);
 //   liImgRef.src = el.url;
 //   liImgRef.alt = el.alt;
 //   liImgRef.width = 640;
