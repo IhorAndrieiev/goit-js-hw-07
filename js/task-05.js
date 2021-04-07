@@ -9,9 +9,7 @@
 const refs = {
     inputEl: document.querySelector('input#name-input'),
     helloEl: document.querySelector('h1 > span')
-};
-console.log(refs);
-
+}; console.log(refs);
 // refs.inputEl.addEventListener('focus', onInputElFocus);
 // refs.inputEl.addEventListener('blur', onInputElBlur);
 //refs.inputEl.addEventListener('change', onInputElChange);
@@ -28,5 +26,10 @@ function onInputElBlur() {
 
 function onInputElChange(event) {
     console.log(event.currentTarget.value);
-    refs.helloEl.textContent = event.currentTarget.value
+    if (event.currentTarget.value.length < 1) {
+        refs.helloEl.textContent = 'незнакомец';
+    } else {
+        refs.helloEl.textContent = event.currentTarget.value
+    }
+    
 };

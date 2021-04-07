@@ -9,11 +9,7 @@
 //console.log(incrementBtn);
 //const counterValue = 0;
 //const step = 1;
-const counterPlugin = function ({
-    rootSelector,
-    counterValue = 0,
-    step = 1,
-} = {}) {
+const counterPlugin = function ({rootSelector,counterValue = 0,step = 1,} = {}) {
     //this._rootSelector = rootSelector;
     this._value = counterValue;
     this._step = step;
@@ -23,30 +19,23 @@ const counterPlugin = function ({
     this.updateValueNumberUI();
 };
 
-counterPlugin.prototype._getRefs = function (rootSelector) {
-    //console.log(rootSelector)
+counterPlugin.prototype._getRefs = function (rootSelector) { //console.log(rootSelector)
     const refs = {};
-    refs.container = document.querySelector(rootSelector);
-    //console.log(refs.container);
+    refs.container = document.querySelector(rootSelector); //console.log(refs.container);
     refs.incrementBtn = refs.container.querySelector('[data-action="increment"]');
     refs.decrementBtn = refs.container.querySelector('[data-action="decrement"]');
-    refs.value = refs.container.querySelector('#value'); //'h1 > span'
-    // console.log(refs.incrementBtn);
-    //console.log(refs.decrementBtn);
-    //console.log(refs.lableSpan)
+    refs.value = refs.container.querySelector('#value'); //'h1 > span'// console.log(refs.incrementBtn);//console.log(refs.decrementBtn); //console.log(refs.lableSpan)
     
     return refs;
 };
 
 counterPlugin.prototype._bindEvents = function () {
-    this._refs.incrementBtn.addEventListener('click', () => {
-        //console.log('counterPlugin.prototype._bindEventsr ~ this', this);
+    this._refs.incrementBtn.addEventListener('click', () => {//console.log(this);
         this.increment();
         this.updateValueNumberUI();
     })
     
-    this._refs.decrementBtn.addEventListener('click', () => {
-        //console.log('counterPlugin.prototype._bindEventsr ~ this', this);
+    this._refs.decrementBtn.addEventListener('click', () => { //console.log(this);
         this.decrement();
         this.updateValueNumberUI();
     })

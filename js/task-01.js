@@ -75,9 +75,8 @@ console.log('Эти элементы:', childrenAllNavItemOfLastChildUlCategorie
 
 
 console.log('ВАРИАНТ 3 РЕШЕНИЯ');
-
-const navAllRef = document.querySelector('ul#categories');
-//console.log(navAllRef);
+const navAllLiItemsRef = document.querySelectorAll('ul#categories li.item');
+const navAllRef = document.querySelector('ul#categories');//console.log(navAllRef);
 
 const refs = {
     selectedListId: navAllRef,
@@ -95,12 +94,11 @@ refs.getListElem.forEach((element) => {
 console.log('ВАРИАНТ 4 РЕШЕНИЯ');
 
 console.log(`В списке :`, navAllLiItemsRef.length, `категории`);
+
      navAllLiItemsRef.forEach(element => {
          console.log(`Категория:`, element.firstElementChild.textContent);
          console.log(`Количество элементов:`, element.lastChild.previousSibling.childElementCount);
-      }); 
-    
-//  } console.log(fff(navAllLiItemsRef))
+      }); //  } console.log(fff(navAllLiItemsRef))
 
 console.log('ВАРИАНТ 5 РЕШЕНИЯ');
 

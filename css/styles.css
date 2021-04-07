@@ -8,3 +8,23 @@
   width: 640px;
   padding: 20px;
 }
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+
+.text_big {
+  font-size: 150 %;
+}
+
+.text_small {
+  font-size: 50 %;
+}
