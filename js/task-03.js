@@ -15,7 +15,7 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-
+console.log('ВАРИАНТ 1')
 const imagesRef = document.querySelector('ul#gallery');
 console.log(imagesRef);
 
@@ -36,7 +36,20 @@ const makeImages = (newImages) => {
 
 const imagesEl = makeImages(images);
 
+
 imagesRef.append(...imagesEl);
+
+//ВАРИАНТ 2
+console.log('ВАРИАНТ 2')
+const galleryEl = document.querySelector('#gallery2');
+console.log(galleryEl);
+const image2El = images.reduce((acc, { url, alt }) => {
+    return acc + `<li class='images__item'>
+    <img src="${url}"alt="${alt}" width="640"/>
+    </li>`
+}, '');
+
+galleryEl.insertAdjacentHTML('beforeend', image2El)
 
 // imagesRef.srs = 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
 // imagesRef.alt = 'White and Black Long Fur Cat';

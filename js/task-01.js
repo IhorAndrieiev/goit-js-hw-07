@@ -75,12 +75,12 @@ console.log('Эти элементы:', childrenAllNavItemOfLastChildUlCategorie
 
 
 console.log('ВАРИАНТ 3 РЕШЕНИЯ');
-const navAllLiItemsRef = document.querySelectorAll('ul#categories li.item');
+const navAllLiItems1Ref = document.querySelectorAll('ul#categories li.item');
 const navAllRef = document.querySelector('ul#categories');//console.log(navAllRef);
 
 const refs = {
     selectedListId: navAllRef,
-    getListElem: navAllLiItemsRef
+    getListElem: navAllLiItems1Ref
 };
 
 console.log(`В списке : ${refs.selectedListId.childElementCount} категории`);

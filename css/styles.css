@@ -1,12 +1,19 @@
 #gallery {
   display: flex;
 }
+#gallery2 {
+  display: flex;
+}
 
 .images__item {
   display: inline-flexbox;
   margin: auto;
   width: 640px;
   padding: 20px;
+}
+
+#counter2 {
+  padding-top: 3px;
 }
 
 #validation-input {
@@ -21,10 +28,10 @@
   border-color: #f44336;
 }
 
-.text_big {
+/* .text_big {
   font-size: 150 %;
 }
 
 .text_small {
   font-size: 50 %;
-}
+} */
